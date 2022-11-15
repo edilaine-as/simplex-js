@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="/images/calc.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Zeyada&display=swap" rel="stylesheet">
+    <title>Simplex App</title>
+
+    <link rel="stylesheet" href="./tailwind.css">    
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div id="app" class="w-screen h-screen bg-gray-900 flex flex-row gap-10 items-center justify-center text-gray-100">
+      
+      <header class="flex flex-col items-center">
+        <img src="images/math.svg" alt="">
+        <h1 class="text-gray-100 font-bold font-sans text-2xl">Simplex App</h1>
+        <p class="text-gray-100 font-sans text-md">Maximize lucros ou minimize gastos!</p>
+      </header>
+      <div class="flex flex-col w-full max-w-sm mt-10">
+        <h2 class="font-semibold mt-3 mb-1">Função Objetiva (FO)</h2>
+        <select id="obj" class="h-12 px-3 bg-gray-800 rounded w-ful outline-none text-xs">
+          <option value="max">Maximizar</option>
+          <option value="min">Minimizar</option>
+        </select>
+
+        <h2 class="font-semibold mt-3 mb-1">Número variavéis</h2>
+        <div class="flex items-center gap-3 h-12 py-4 px-3 bg-gray-800 rounded w-full">
+          <input id="numVar" type="text" class="bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400 outline-none w-full" onblur="adicionarCamposFORes(0)">
+        </div>  
+
+        <div id="fo"></div>
+
+        <h2 class="font-semibold mt-3 mb-1">Número restrições</h2>
+        <div class="flex items-center gap-3 h-12 py-4 px-3 bg-gray-800 rounded w-full">
+          <input id="numRes" type="text" class="bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400 outline-none w-full" onblur="adicionarCamposFORes(1)">
+        </div>      
+      </div>
+      
+      <div class="flex flex-col w-full max-w-sm mt-10">
+        <div id="restricoes"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
